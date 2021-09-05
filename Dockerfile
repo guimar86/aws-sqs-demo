@@ -12,7 +12,7 @@ USER appuser
 FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
 WORKDIR /src
 COPY ["AWS.SQS.csproj", "./"]
-RUN dotnet restore "AwsDotnetS3.csproj"
+RUN dotnet restore "AWS.SQS.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "AWS.SQS.csproj" -c Release -o /app/build
